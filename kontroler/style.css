@@ -163,6 +163,7 @@ body {
     left: 0;
     transform: translateY(-50%);
     background-image: url('koło.png');
+    background-position: center;
 
 }
 
