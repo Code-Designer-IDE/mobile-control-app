@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="style.css">
-    </head>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+        <script src="https://unpkg.com/p5ble@0.0.7/dist/p5.ble.js"></script>
     <body>
     
         <div class="container">
@@ -27,15 +28,13 @@
 
             </div>
     
-            <div class="joystick-area">
+            <div class="joystick-area" id="joystick-area">
 
-                <div class="joystick">
+                <div class="joystick" id="joystick">
 
-                    <div class="inner-circle">
-
-                    </div>
+                    <div class="inner-circle" id="inner-circle"></div>
                     
-                    <div class="arrow-buttons">
+                    <!-- <div class="arrow-buttons">
                     
                         <button class="arrow arrow-up">↑</button>
                     
@@ -45,7 +44,7 @@
                     
                         <button class="arrow arrow-down">↓</button>
                     
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -92,6 +91,8 @@
 
             </div>
         </div>
+
+        <button id="bluetooth-connect" class="bluetooth-button">Connect Bluetooth</button>
 
         <script src="script.js"></script>
     </body>

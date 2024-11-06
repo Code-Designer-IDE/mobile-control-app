@@ -5,7 +5,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    margin: 0;
+    
 }
 
 .container {
@@ -113,7 +114,7 @@ body.dark-mode .back-button:hover {
 
 }
 
-.arrow-buttons {
+/* .arrow-buttons {
     display: grid;
     grid-template-columns: 60px 60px 60px;
     grid-template-rows: 60px 60px 60px;
@@ -158,27 +159,29 @@ body.dark-mode .back-button:hover {
 .arrow.arrow-down {
     grid-column: 2; 
     grid-row: 3; 
-}
+} */
 
-/* .joystick {
+.joystick {
     width: 150px;
     height: 150px;
     background-color: yellow;
     border-radius: 50%;
-    position: relative;
-    display: flex;
+    position: relative; 
     justify-content: center;
     align-items: center;
-
 }
 
 .inner-circle {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background-color: olive;
     border-radius: 50%;
-
-} */
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+}
 
 .switch {
     position: relative;
