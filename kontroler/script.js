@@ -13,7 +13,7 @@ function emojiTop() {
 
     if (topElement) {
         topElement.addEventListener("click", function() {
-            console.log("top klik");
+            console.log("top emoji klik");
         });
     }
 }
@@ -23,7 +23,7 @@ function emojiBottom() {
 
     if (bottomElement) {
         bottomElement.addEventListener("click", function() {
-            console.log("bottom klick");
+            console.log("bottom emoji klick");
         });
     }
 }
@@ -33,7 +33,7 @@ function emojiRight() {
 
     if (rightElement) {
         rightElement.addEventListener("click", function() {
-            console.log("right klik");
+            console.log("right emoji klik");
         });
     }
 }
@@ -43,7 +43,7 @@ function emojileft() {
 
     if (leftElement) {
         leftElement.addEventListener("click", function() {
-            console.log("left klik");
+            console.log("left emoji klik");
         });
     }
 }
@@ -53,3 +53,57 @@ emojiTop();
 emojiBottom();
 emojiRight();
 emojileft();
+
+function arrowUp() {
+    const upElement = document.querySelector(".arrow-up");
+
+    if (upElement) {
+        upElement.addEventListener("click", function() {
+            console.log("up klik")
+        })
+    }
+}
+
+function arrowDown() {
+    const downElement = document.querySelector(".arrow-down");
+
+    if (downElement) {
+        downElement.addEventListener("click", function() {
+            console.log("down klik")
+        })
+    }
+}
+
+function arrowLeft() {
+    const leftElement = document.querySelector(".arrow-left");
+
+    if (leftElement) {
+        leftElement.addEventListener("click", function() {
+            console.log("left klik")
+        })
+    }
+}
+
+function arrowRight() {
+    const rightElement = document.querySelector(".arrow-right");
+
+    if (rightElement) {
+        rightElement.addEventListener("click", function() {
+            console.log("right klik")
+        })
+    }
+}
+
+arrowUp();
+arrowDown();
+arrowLeft();
+arrowRight();
+
+function toggleSettings() {
+    const settingsPage = document.getElementById('settings-page');
+    settingsPage.classList.toggle('active'); 
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
