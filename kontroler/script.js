@@ -229,3 +229,21 @@ function draw() {
     text(myValue, 100, 100);
 
 }
+
+function toggleArrow() {
+    const arrowToggle = document.getElementById("arrow-toggle");
+    const joystick = document.getElementById("joystick");
+    const arrowButtons = document.getElementById("arrow-buttons");
+
+    if (arrowToggle.checked) {
+        joystick.style.display = "none";         
+        arrowButtons.style.display = "grid";     
+    } else {
+        joystick.style.display = "block";        
+        arrowButtons.style.display = "none";    
+    }
+}
+
+document.getElementById("arrow-toggle").addEventListener("change", toggleArrow);
+
+toggleArrow();

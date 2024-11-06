@@ -31,26 +31,19 @@
             <div class="joystick-area" id="joystick-area">
 
                 <div class="joystick" id="joystick">
-
                     <div class="inner-circle" id="inner-circle"></div>
-                    
-                    <!-- <div class="arrow-buttons">
-                    
-                        <button class="arrow arrow-up">↑</button>
-                    
-                        <button class="arrow arrow-left">←</button>
-                    
-                        <button class="arrow arrow-right">→</button>
-                    
-                        <button class="arrow arrow-down">↓</button>
-                    
-                    </div> -->
+                </div>
 
+                <div class="arrow-buttons" id="arrow-buttons">
+                    <button class="arrow arrow-up">↑</button>
+                    <button class="arrow arrow-left">←</button>
+                    <button class="arrow arrow-right">→</button>
+                    <button class="arrow arrow-down">↓</button>
                 </div>
 
                 <div class="switch">
                     <input type="checkbox" id="toggle" class="toggle-input">
-                    <label for="toggle" class="toggle-label"></label>
+                    <label class="toggle-label"></label>
                 </div>
 
                 <div class="emojis">
@@ -85,6 +78,14 @@
                     
                     <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
                 
+                </div>
+
+                <div class="option">
+
+                    <label for="arrow-toggle">zmiana joysticka na strzałki</label>
+
+                    <input type="checkbox" id="arrow-toggle" onclick="toggleArrow()">
+
                 </div>
 
                 <button class="back-button" onclick="toggleSettings()">Powrót</button>
