@@ -112,7 +112,7 @@ arrowRight();
 ////////////////////////////////////////////////////////////////////////
 
 function toggleSettings() {
-    const settingsPage = document.getElementById('settings-page');
+    const settingsPage = document.querySelector('#settings-page');
     settingsPage.classList.toggle('active'); 
 
 }
@@ -126,8 +126,8 @@ function toggleTheme() {
 
 ////////////////////////////////////////////////////////////////////////
 
-const joystick = document.getElementById("joystick");
-const innerCircle = document.getElementById("inner-circle");
+const joystick = document.querySelector("#joystick");
+const innerCircle = document.querySelector("#inner-circle");
 
 let isDragging = false;
 let startX, startY;
@@ -231,9 +231,9 @@ function draw() {
 }
 
 function toggleArrow() {
-    const arrowToggle = document.getElementById("arrow-toggle");
-    const joystick = document.getElementById("joystick");
-    const arrowButtons = document.getElementById("arrow-buttons");
+    const arrowToggle = document.querySelector("#arrow-toggle");
+    const joystick = document.querySelector("#joystick");
+    const arrowButtons = document.querySelector("#arrow-buttons");
 
     if (arrowToggle.checked) {
         joystick.style.display = "none";         
@@ -244,6 +244,22 @@ function toggleArrow() {
     }
 }
 
-document.getElementById("arrow-toggle").addEventListener("change", toggleArrow);
+document.querySelector("#arrow-toggle").addEventListener("change", toggleArrow);
 
 toggleArrow();
+
+function toggleSettings() {
+    const settingsPage = document.querySelector('#settings-page');
+    settingsPage.classList.toggle('active');
+}
+
+document.addEventListener('click', function (event) {
+    const settingsPage = document.querySelector('#settings-page');
+    const settingsIcon = document.querySelector('.settings-icon');
+
+    if (settingsPage.classList.contains('active') && 
+        !settingsPage.contains(event.target) && 
+        !settingsIcon.contains(event.target)) {
+        settingsPage.classList.remove('active');
+    }
+});

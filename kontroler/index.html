@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-        <script src="https://unpkg.com/p5ble@0.0.7/dist/p5.ble.js"></script>
+        <script src="https://unpkg.com/p5ble@0.0.7/dist/p5.ble.js"></script> -->
     <body>
     
         <div class="container">
@@ -28,7 +28,7 @@
 
             </div>
     
-            <div class="joystick-area" id="joystick-area">
+            <div class="controls-area" id="controls-area">
 
                 <div class="joystick" id="joystick">
                     <div class="inner-circle" id="inner-circle"></div>
@@ -43,57 +43,59 @@
 
                 <div class="switch">
                     <input type="checkbox" id="toggle" class="toggle-input">
-                    <label class="toggle-label"></label>
+                    <label for="toggle" class="toggle-label"></label>
                 </div>
 
                 <div class="emojis">
-
-                    <div class="emoji horn"></div>
-
-                    <div class="emoji emoji-top"></div>
-
-                    <div class="emoji emoji-bottom"></div>
-
-                    <div class="emoji emoji-left"></div>
-
-                    <div class="emoji emoji-right"></div>
-
-                </div>
-
-            </div>
-
-            <div class="settings-page" id="settings-page">
-
-                <div class="option">
-
-                    <label>zamiana kontrolek miejscami</label>
-
-                    <input type="checkbox" id="swap-checkbox" onclick="swapControls()">
-                
-                </div>
-
-                <div class="option">
-
-                    <label for="theme-toggle">zmiana motywu na ciemny/jasny</label>
                     
-                    <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                    <button class="emoji horn"></button>
+                    
+                    <button class="emoji emoji-top"></button>
+                    
+                    <button class="emoji emoji-bottom"></button>
+                    
+                    <button class="emoji emoji-left"></button>
+                    
+                    <button class="emoji emoji-right"></button>
                 
                 </div>
 
-                <div class="option">
-
-                    <label for="arrow-toggle">zmiana joysticka na strzałki</label>
-
-                    <input type="checkbox" id="arrow-toggle" onclick="toggleArrow()">
-
-                </div>
-
-                <button class="back-button" onclick="toggleSettings()">Powrót</button>
+            </div>
 
             </div>
+        
         </div>
 
-        <button id="bluetooth-connect" class="bluetooth-button">Connect Bluetooth</button>
+        <div class="settings-page" id="settings-page">
+
+            <div class="option">
+
+                <label>zamiana kontrolek miejscami</label>
+
+                <input type="checkbox" id="swap-checkbox" onclick="swapControls()">
+            
+            </div>
+
+            <div class="option">
+
+                <label for="theme-toggle">zmiana motywu na ciemny/jasny</label>
+                
+                <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+            
+            </div>
+
+            <div class="option">
+
+                <label for="arrow-toggle">zmiana joysticka na strzałki</label>
+
+                <input type="checkbox" id="arrow-toggle" onclick="toggleArrow()">
+
+            </div>
+
+            <button class="back-button" onclick="toggleSettings()">Powrót</button>
+
+
+        <!-- <button id="bluetooth-connect" class="bluetooth-button">Connect Bluetooth</button> -->
 
         <script src="script.js"></script>
     </body>
