@@ -230,6 +230,8 @@ function draw() {
 
 }
 
+////////////////////////////////////////////////////////////////////////
+
 function toggleArrow() {
     const arrowToggle = document.querySelector("#arrow-toggle");
     const joystick = document.querySelector("#joystick");
@@ -248,6 +250,8 @@ document.querySelector("#arrow-toggle").addEventListener("change", toggleArrow);
 
 toggleArrow();
 
+////////////////////////////////////////////////////////////////////////
+
 function toggleSettings() {
     const settingsPage = document.querySelector('#settings-page');
     settingsPage.classList.toggle('active');
@@ -263,3 +267,23 @@ document.addEventListener('click', function (event) {
         settingsPage.classList.remove('active');
     }
 });
+
+////////////////////////////////////////////////////////////////////////
+
+function swapControls() {
+    const controlsArea = document.querySelector("#controls-area");
+    const moveControls = document.querySelector(".move-controls");
+    const emojis = document.querySelector(".emojis");
+    const Switch = document.querySelector(".switch");
+
+    const swapCheckbox = document.querySelector("#swap-checkbox");
+    if (swapCheckbox.checked) {
+        controlsArea.insertBefore(emojis, moveControls);
+        controlsArea.insertBefore(Switch, moveControls);
+    } else {
+        controlsArea.insertBefore(moveControls, emojis);
+        controlsArea.insertBefore(Switch, emojis);
+    }
+}
+
+document.querySelector("#swap-checkbox").addEventListener("change", swapControls);
