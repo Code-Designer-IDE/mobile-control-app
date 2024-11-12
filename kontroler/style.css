@@ -6,7 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    
+    background-color: #00bfff;
+
 }
 
 .container {
@@ -16,6 +17,11 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-color: #00bfff;
+
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
 
 }
 
@@ -330,4 +336,12 @@ body.dark-mode .back-button:hover {
     transform: translateY(-50%);
     background-image: url('x.png');
 
+}
+
+
+@media (max-width: 800px) {
+    .container {
+        height: 100vh; 
+        width: 100vw;
+    }
 }
