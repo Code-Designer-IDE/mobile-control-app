@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="style.css">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-        <script src="https://unpkg.com/p5ble@0.0.7/dist/p5.ble.js"></script> -->
+        <link rel="manifest" href="manifest.json">
     <body>
     
         <div class="container">
@@ -22,7 +20,7 @@
 
                 <div class="settings-icon" onclick="toggleSettings()">
                     
-                    <img src="ustawienia.png" alt="Settings" width="30">
+                    <img class="settings-img" src="img/ustawienia.png" alt="Settings">
                 
                 </div>
 
@@ -31,7 +29,6 @@
             <div class="controls-area" id="controls-area">
 
                 <div class="move-controls">
-                    
                     <div class="joystick" id="joystick">
                         <div class="inner-circle" id="inner-circle"></div>
                     </div>
@@ -42,6 +39,7 @@
                         <button class="arrow arrow-right">→</button>
                         <button class="arrow arrow-down">↓</button>
                     </div>
+
                 </div>
 
 
@@ -97,9 +95,12 @@
             </div>
 
             <button class="back-button" onclick="toggleSettings()">Powrót</button>
+        
+        </div>
 
-
-        <!-- <button id="bluetooth-connect" class="bluetooth-button">Connect Bluetooth</button> -->
+        <div id="joystick-pasition">
+            <p class="position">X: 0, Y: 0</p>
+        </div>
 
         <script src="script.js"></script>
     </body>

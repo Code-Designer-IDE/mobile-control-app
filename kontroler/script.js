@@ -3,7 +3,7 @@ function emojiHorn() {
 
     if (hornElement) {
         hornElement.addEventListener("click", function() {
-            console.log("Horn");
+            alert("horn");
         });
     }
     
@@ -14,7 +14,7 @@ function emojiTop() {
 
     if (topElement) {
         topElement.addEventListener("click", function() {
-            console.log("top emoji klik");
+            alert("emoji-top");
         });
     }
 
@@ -25,7 +25,7 @@ function emojiBottom() {
 
     if (bottomElement) {
         bottomElement.addEventListener("click", function() {
-            console.log("bottom emoji klick");
+            alert("emoji-bottom");
         });
     }
 
@@ -36,7 +36,7 @@ function emojiRight() {
 
     if (rightElement) {
         rightElement.addEventListener("click", function() {
-            console.log("right emoji klik");
+            alert("emoji-right");
         });
     }
 
@@ -47,7 +47,7 @@ function emojileft() {
 
     if (leftElement) {
         leftElement.addEventListener("click", function() {
-            console.log("left emoji klik");
+            alert("emoji-left");
         });
     }
 
@@ -61,12 +61,26 @@ emojileft();
 
 ////////////////////////////////////////////////////////////////////////
 
+function Switch(){
+    const switchElement = document.querySelector(".switch")
+
+    if (switchElement){
+        switchElement.addEventListener("click", function(){
+            alert("switch");
+        });
+    }
+}
+
+Switch();
+
+////////////////////////////////////////////////////////////////////////
+
 function arrowUp() {
     const upElement = document.querySelector(".arrow-up");
 
     if (upElement) {
         upElement.addEventListener("click", function() {
-            console.log("up klik")
+            alert("up klik");
         })
     }
 
@@ -77,7 +91,7 @@ function arrowDown() {
 
     if (downElement) {
         downElement.addEventListener("click", function() {
-            console.log("down klik")
+            alert("down klik");
         })
     }
 
@@ -88,7 +102,7 @@ function arrowLeft() {
 
     if (leftElement) {
         leftElement.addEventListener("click", function() {
-            console.log("left klik")
+            alert("left klik");
         })
     }
 
@@ -99,7 +113,7 @@ function arrowRight() {
 
     if (rightElement) {
         rightElement.addEventListener("click", function() {
-            console.log("right klik")
+            alert("right klik");
         })
     }
 }
@@ -230,8 +244,6 @@ function draw() {
 
 }
 
-////////////////////////////////////////////////////////////////////////
-
 function toggleArrow() {
     const arrowToggle = document.querySelector("#arrow-toggle");
     const joystick = document.querySelector("#joystick");
@@ -250,8 +262,6 @@ document.querySelector("#arrow-toggle").addEventListener("change", toggleArrow);
 
 toggleArrow();
 
-////////////////////////////////////////////////////////////////////////
-
 function toggleSettings() {
     const settingsPage = document.querySelector('#settings-page');
     settingsPage.classList.toggle('active');
@@ -267,8 +277,6 @@ document.addEventListener('click', function (event) {
         settingsPage.classList.remove('active');
     }
 });
-
-////////////////////////////////////////////////////////////////////////
 
 function swapControls() {
     const controlsArea = document.querySelector("#controls-area");
@@ -287,3 +295,58 @@ function swapControls() {
 }
 
 document.querySelector("#swap-checkbox").addEventListener("change", swapControls);
+  
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker zarejestrowany:', registration);
+        })
+        .catch(error => {
+          console.log('Rejestracja Service Workera nie powiodła się:', error);
+        });
+    });
+}
+
+const positionDisplay = document.querySelector("#joystick-pasition .position");
+
+////////////////////////////////////////////////////////////////////////
+
+innerCircle.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    innerCircle.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    let deltaX = e.clientX - startX;
+    let deltaY = e.clientY - startY;
+
+    let distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+    if (distance < maxMoveRadius) {
+        innerCircle.style.left = `calc(50% + ${deltaX}px)`;
+        innerCircle.style.top = `calc(50% + ${deltaY}px)`;
+    } else {
+        let angle = Math.atan2(deltaY, deltaX);
+        innerCircle.style.left = `calc(50% + ${maxMoveRadius * Math.cos(angle)}px)`;
+        innerCircle.style.top = `calc(50% + ${maxMoveRadius * Math.sin(angle)}px)`;
+    }
+
+    positionDisplay.textContent = `X: ${Math.round(deltaX)}, Y: ${Math.round(deltaY)}`;
+});
+
+document.addEventListener("mouseup", () => {
+    if (isDragging) {
+        innerCircle.style.left = "50%";
+        innerCircle.style.top = "50%";
+        innerCircle.style.cursor = "grab";
+        isDragging = false;
+
+        positionDisplay.textContent = "X: 0, Y: 0";
+    }
+});
