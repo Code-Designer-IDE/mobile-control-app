@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    /* background-color: #00bfff; */
+    background-color: #00bfff;
 
 }
 
@@ -20,10 +20,10 @@ body {
 
 }
 
-/* body.dark-mode {
+body.dark-mode {
     background-color: #1e1e1e;
 
-} */
+}
 
 body.dark-mode .container {
     background-color: #1e1e1e;
