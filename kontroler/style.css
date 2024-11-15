@@ -36,6 +36,32 @@ body {
     position: relative; 
 }
 
+
+.bluetooth-controls {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#connect{
+    background-color: yellow;
+    border: solid yellow 1px;
+    font-size: medium;
+    box-shadow: 4px 4px 4px;
+
+}
+
+#disconnect{
+    background-color: yellow;
+    border: solid yellow 1px;
+    font-size: medium;
+    box-shadow: 4px 4px 4px;
+
+}
+
 .distance {
     color: yellow;
     font-size: 1.5em;
@@ -196,6 +222,22 @@ body.dark-mode .back-button:hover {
 
 }
 
+.joystick-wrapper {
+    position: relative;
+}
+
+.joystick-position {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: yellow;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
 .inner-circle {
     width: 50px;
     height: 50px;
@@ -293,7 +335,7 @@ body.dark-mode .back-button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('/images/horn.png');
+    background-image: url('images/horn.png');
 
 }
 
@@ -301,7 +343,7 @@ body.dark-mode .back-button:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('/images/triangle.png');
+    background-image: url('images/triangle.png');
 
 }
 
@@ -309,7 +351,7 @@ body.dark-mode .back-button:hover {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('/images/square.png');
+    background-image: url('images/square.png');
 
 }
 
@@ -317,7 +359,7 @@ body.dark-mode .back-button:hover {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-image: url('/images/circle.png');
+    background-image: url('images/circle.png');
     background-position: center;
 
 }
@@ -326,7 +368,7 @@ body.dark-mode .back-button:hover {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    background-image: url('/images/cross.png');
+    background-image: url('images/cross.png');
 
 }
 

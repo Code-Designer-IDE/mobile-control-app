@@ -6,20 +6,34 @@ document.getElementById('connect').addEventListener('click', async () => {
         const device = await navigator.bluetooth.requestDevice({ acceptAllDevices: true });
         server = await device.gatt.connect();
         deviceName = device.name || "Nieznane urządzenie";
-        alert("Połączono z urządzeniem: " + deviceName);
+        document.getElementById('device-name').textContent = "Połączono z: " + deviceName;
+        document.getElementById('disconnect').disabled = false;
+
+        document.getElementById('connect').style.display = 'none';
+        document.getElementById('disconnect').style.display = 'block';
         document.getElementById('disconnect').disabled = false;
 
     } catch (error) {
         console.error('Błąd:', error);
+        document.getElementById('device-name').textContent = "Błąd połączenia";
     }
 });
 
 document.getElementById('disconnect').addEventListener('click', () => {
     if (server && server.connected) {
         server.disconnect();
-        alert("Rozłączono z urządzeniem " + deviceName);
-        document.getElementById('disconnect').disabled = true;
+        document.getElementById('device-name').textContent = "Rozłączono z: " + deviceName;
+
+        document.getElementById('disconnect').style.display = 'none';
+        document.getElementById('connect').style.display = 'block';
+
+        setTimeout(() => {
+            document.getElementById('device-name').textContent = "Brak połączenia";
+        }, 2000);
     } else {
-        alert("Brak aktywnego połączenia");
+        document.getElementById('device-name').textContent = "Brak aktywnego połączenia";
+        setTimeout(() => {
+            document.getElementById('device-name').textContent = "Brak połączenia";
+        }, 5000);
     }
 });
