@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="style.css">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-        <script src="https://unpkg.com/p5ble@0.0.7/dist/p5.ble.js"></script> -->
+        <link rel="manifest" href="manifest.json">
     <body>
     
         <div class="container">
@@ -98,8 +96,15 @@
 
             <button class="back-button" onclick="toggleSettings()">Powrót</button>
 
-
-        <!-- <button id="bluetooth-connect" class="bluetooth-button">Connect Bluetooth</button> -->
+            <div id="joystick-pasition">
+                <p class="position">X: 0, Y: 0</p>
+            </div>
+    
+            <button id="connect">Połącz z Bluetooth</button>
+            <button id="disconnect" disabled>Rozłącz</button>
+    
+            <script src="bluetooth.js"></script>
+            <script src="script.js"></script>
 
         <script src="script.js"></script>
     </body>
