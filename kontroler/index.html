@@ -12,12 +12,6 @@
 
             <div class="top">
 
-                <div class="bluetooth-controls">
-                    <p id="device-name">Brak połączenia</p>
-                    <button id="connect">Połącz z Bluetooth</button>
-                    <button id="disconnect" disabled style="display: none;">Rozłącz</button>
-                </div>
-
                 <div class="distance">
                     
                     10cm
@@ -26,7 +20,7 @@
 
                 <div class="settings-icon" onclick="toggleSettings()">
                     
-                    <img class="settings-img" src="images/settings.png" alt="Settings">
+                    <img class="settings-img" src="img/ustawienia.png" alt="Settings">
                 
                 </div>
 
@@ -35,20 +29,8 @@
             <div class="controls-area" id="controls-area">
 
                 <div class="move-controls">
-
-                    <div class="joystick-wrapper">
-
-                        <div class="joystick-position" id="joystick-position">
-                            
-                            X: 0, Y: 0
-
-                        </div>
-
-                        <div class="joystick" id="joystick">
-                            
-                            <div class="inner-circle" id="inner-circle"></div>
-
-                        </div>
+                    <div class="joystick" id="joystick">
+                        <div class="inner-circle" id="inner-circle"></div>
                     </div>
     
                     <div class="arrow-buttons" id="arrow-buttons">
@@ -115,6 +97,13 @@
             <button class="back-button" onclick="toggleSettings()">Powrót</button>
         
         </div>
+
+        <div id="joystick-pasition">
+            <p class="position">X: 0, Y: 0</p>
+        </div>
+
+        <button id="connect">Połącz z Bluetooth</button>
+        <button id="disconnect" disabled>Rozłącz</button>
 
         <script src="bluetooth.js"></script>
         <script src="script.js"></script>

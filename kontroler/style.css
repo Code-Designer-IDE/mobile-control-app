@@ -335,7 +335,7 @@ body.dark-mode .back-button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('images/horn.png');
+    background-image: url('img/trąbka.png');
 
 }
 
@@ -343,7 +343,7 @@ body.dark-mode .back-button:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('images/triangle.png');
+    background-image: url('img/trójkąt.png');
 
 }
 
@@ -351,7 +351,7 @@ body.dark-mode .back-button:hover {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('images/square.png');
+    background-image: url('img/kwadrat.png');
 
 }
 
@@ -359,7 +359,7 @@ body.dark-mode .back-button:hover {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-image: url('images/circle.png');
+    background-image: url('img/koło.png');
     background-position: center;
 
 }
@@ -368,9 +368,10 @@ body.dark-mode .back-button:hover {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    background-image: url('images/cross.png');
+    background-image: url('img/x.png');
 
 }
+
 
 
 @media (max-width: 800px) {
