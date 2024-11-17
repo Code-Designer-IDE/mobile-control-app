@@ -313,6 +313,8 @@ const positionDisplay = document.querySelector("#joystick-pasition .position");
 
 ////////////////////////////////////////////////////////////////////////
 
+let joystickPosition = document.getElementById("joystick-position");
+
 innerCircle.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.clientX;
@@ -325,7 +327,6 @@ document.addEventListener("mousemove", (e) => {
 
     let deltaX = e.clientX - startX;
     let deltaY = e.clientY - startY;
-
     let distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
     if (distance < maxMoveRadius) {
@@ -337,7 +338,7 @@ document.addEventListener("mousemove", (e) => {
         innerCircle.style.top = `calc(50% + ${maxMoveRadius * Math.sin(angle)}px)`;
     }
 
-    positionDisplay.textContent = `X: ${Math.round(deltaX)}, Y: ${Math.round(deltaY)}`;
+    joystickPosition.textContent = `X: ${deltaX}, Y: ${deltaY}`;
 });
 
 document.addEventListener("mouseup", () => {
@@ -345,8 +346,7 @@ document.addEventListener("mouseup", () => {
         innerCircle.style.left = "50%";
         innerCircle.style.top = "50%";
         innerCircle.style.cursor = "grab";
+        joystickPosition.textContent = "X: 0, Y: 0";
         isDragging = false;
-
-        positionDisplay.textContent = "X: 0, Y: 0";
     }
 });
