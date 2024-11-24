@@ -1,12 +1,19 @@
-
 :root {
     --primary: #00bfff;
     --settings: #f0f0f0;
+    --font-color: #000;
+    --back-button: #00bfff;
+    --back-button-hover: #008cbf;
+    --box-shadow: #000;
 }
 
 .dark-mode {
     --primary: #1e1e1e;
     --settings: #2c2c2c;
+    --font-color: #fff;
+    --back-button: #444141;
+    --back-button-hover: #706666;
+    --box-shadow: #535252;
 }
 
 body {
@@ -44,13 +51,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    color: var(--font-color);
 }
 
 #connect{
     background-color: yellow;
     border: solid yellow 1px;
     font-size: medium;
-    box-shadow: 4px 4px 4px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
@@ -58,7 +66,7 @@ body {
     background-color: yellow;
     border: solid yellow 1px;
     font-size: medium;
-    box-shadow: 4px 4px 4px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
@@ -93,8 +101,9 @@ body {
     width: 33.33%;
     height: 100%;
     background-color: var(--settings);
+    color: var(--font-color);
     padding: 20px;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 0 10px var(--box-shadow);
     overflow-y: auto;
     z-index: 1000;
 
@@ -102,12 +111,6 @@ body {
 
 .settings-page.active {
     display: block;
-
-}
-
-.settings-page h2 {
-    color: #333;
-    margin-bottom: 20px;
 
 }
 
@@ -123,8 +126,8 @@ body {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1em;
-    color: #ffffff;
-    background-color: #00bfff;
+    color: var(--font-color);
+    background-color: var(--primary);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -133,17 +136,17 @@ body {
 }
 
 .back-button:hover {
-    background-color: #008cbf;
+    background-color: var(--back-button-hover);
 
 }
 
 body.dark-mode .back-button {
-    background-color: #444141;
+    background-color: var(--back-button);
 
 }
 
 body.dark-mode .back-button:hover {
-    background-color: #706666;
+    background-color: var(--back-button-hover);
 
 }
 
@@ -159,15 +162,15 @@ body.dark-mode .back-button:hover {
     display: grid;
     grid-template-columns: 60px 60px 60px;
     grid-template-rows: 60px 60px 60px;
-    gap: 10px;
+    gap: 24px;
     align-items: center;
     justify-items: center;
 
 }
 
 .arrow {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-size: 1.5em;
     background-color: yellow;
     border: none;
@@ -177,7 +180,7 @@ body.dark-mode .back-button:hover {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s;
-    box-shadow: 7px 7px 7px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
@@ -211,14 +214,14 @@ body.dark-mode .back-button:hover {
 }
 
 .joystick {
-    width: 150px;
-    height: 150px;
+    width: 240px;
+    height: 240px;
     background-color: yellow;
     border-radius: 50%;
     position: relative; 
     justify-content: center;
     align-items: center;
-    box-shadow: 4px 4px 4px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
@@ -239,8 +242,8 @@ body.dark-mode .back-button:hover {
 }
 
 .inner-circle {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     background-color: olive;
     border-radius: 50%;
     position: absolute; 
@@ -257,7 +260,7 @@ body.dark-mode .back-button:hover {
     width: 50px;
     height: 25px;
     border-radius: 50%;
-    box-shadow: 4px 4px 4px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
@@ -322,7 +325,7 @@ body.dark-mode .back-button:hover {
     position: absolute;
     cursor: pointer; 
     transition: background-color 0.3s; 
-    box-shadow: 4px 4px 4px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
 
 }
 
